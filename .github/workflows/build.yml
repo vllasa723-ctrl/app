@@ -16,7 +16,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build with system Gradle
+    - name: Setup Gradle 8.4
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.4'
+
+    - name: Build with Gradle
       run: gradle assembleDebug
 
     - name: Upload APK
